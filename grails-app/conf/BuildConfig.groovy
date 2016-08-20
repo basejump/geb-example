@@ -54,11 +54,15 @@ grails.project.dependency.resolution = {
         test "org.seleniumhq.selenium:selenium-chrome-driver:${webdriverVersion}"
         test "org.seleniumhq.selenium:selenium-firefox-driver:${webdriverVersion}"
         test "org.seleniumhq.selenium:selenium-ie-driver:${webdriverVersion}"
+        test("com.codeborne:phantomjsdriver:1.2.1") {
+            // phantomjs driver pulls in a different selenium version amongs other stuff it seemed
+            transitive = false
+        }
 
         test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
 
         // For downloading browser-specific drivers that browsers like Chrome and IE require
-        test "io.github.bonigarcia:webdrivermanager:1.3.1"
+        test "io.github.bonigarcia:webdrivermanager:1.4.8"
     }
 
     plugins {

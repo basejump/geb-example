@@ -7,9 +7,12 @@
 
 import io.github.bonigarcia.wdm.ChromeDriverManager
 import io.github.bonigarcia.wdm.InternetExplorerDriverManager
+import io.github.bonigarcia.wdm.PhantomJsDriverManager
+
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.ie.InternetExplorerDriver
+import org.openqa.selenium.phantomjs.PhantomJSDriver
 
 // http://www.gebish.org/manual/current/configuration.html#waiting_for_base_navigator
 baseNavigatorWaiting = true
@@ -39,4 +42,13 @@ environments {
 
     driver = { new InternetExplorerDriver() }
   }
+
+  phantom {
+    PhantomJsDriverManager.getInstance().setup()
+    waiting {
+      timeout = 2
+    }
+    driver = { new PhantomJSDriver() }
+  }
+  
 }

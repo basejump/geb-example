@@ -75,7 +75,7 @@ grails.project.dependency.resolution = {
 
         compile ":asset-pipeline:2.3.8"
 
-        test ":remote-control:1.5"
+        test ":remote-control:2.0"
         test ":geb:${gebVersion}"
     }
 }
